@@ -1,23 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import Register from './components/Food-register';
+import HEAD from './Header/index';
+import '@fontsource/roboto';
+import React from 'react';
+import { Container, Box } from '@material-ui/core';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 
+const useStyles = makeStyles(theme => ({
+  offset: theme.mixins.toolbar,
+}))
 function App() {
+  const classes = useStyles();
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <React.Fragment>
+        <HEAD />
+        <div className={classes.offset} />
+      </React.Fragment>
+      <Box py={2}>
+        <Register />
+      </Box>
+
+
+
     </div>
   );
 }
